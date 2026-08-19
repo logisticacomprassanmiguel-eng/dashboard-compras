@@ -21,11 +21,12 @@ st.title("📊 Tablero de Control - Gestión de Compras")
 
 # --- PASO DE ENLACE DE GOOGLE SHEETS ---
 # Pega aquí el enlace CSV obtenido en el PASO 1:
-URL_SHEET = "REEMPLAZA_ESTO_CON_TU_ENLACE_CSV_DE_GOOGLE_SHEETS"
+
+# --- PASO DE ENLACE DE GOOGLE SHEETS ---
+URL_SHEET = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRZt9DDcAyGzkPpIipOwJX7jXkJfrK5NYbxXIZDQA4p2hw6H8I07yxVMt1nu6Ib5SGCLJ7fWwC7vtI3/pub?gid=284841416&single=true&output=csv"
 
 @st.cache_data(ttl=300)
-def cargar_datos(url):https://docs.google.com/spreadsheets/d/e/2PACX-1vRZt9DDcAyGzkPpIipOwJX7jXkJfrK5NYbxXIZDQA4p2hw6H8I07yxVMt1nu6Ib5SGCLJ7fWwC7vtI3/pub?gid=284841416&single=true&output=csv
-    try:
+def cargar_datos(url):
         df = pd.read_csv(url)
         df.columns = df.columns.str.strip()
         
